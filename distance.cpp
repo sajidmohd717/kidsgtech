@@ -1,7 +1,7 @@
 #include <FastLED.h>
 
 #define LED_PIN 0
-#define NUM_LEDS 1
+#define NUM_LEDS 6
 #define echoPin 4
 #define trigPin 5
 
@@ -46,15 +46,27 @@ void loop() {
 
 
   if (distance < 20) {
-    leds[0] = CRGB(255,0,0);
+    for (int i = 0; i < NUM_LEDS; i++) {
+      leds[i] = CRGB(255,0,0);
+      FastLED.show();
+      delay(100);
+    }
   }
   else if (distance < 40) {
-    leds[0] = CRGB(0,255,0);
+    for (int i = 0; i < NUM_LEDS; i++) {
+      leds[i] = CRGB(0,255,0);
+      FastLED.show();
+      delay(100);
+    }
   }
   else {
-    leds[0] = CRGB(0,0,255);
+    for (int i = 0; i < NUM_LEDS; i++) {
+      leds[i] = CRGB(0,0,255);
+      FastLED.show();
+      delay(100);
+    }
   }
     
-  FastLED.show();
+  
   
 }
